@@ -1,6 +1,7 @@
 <nav style="background-color: #A0C49D;" class="navbar navbar-expand-lg rounded-bottom mb-3">
-  <a class="navbar-brand ms-3" href="{{ path('index')}}">Home</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+<div class="container-fluid">
+  <a class="navbar-brand" href="{{ path('index')}}">Home</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -8,7 +9,7 @@
       <a class="nav-item nav-link" href="{{ path('app_goat_index')}}">Cabras</a>
       <a class="nav-item nav-link" href="{{ path('goatDead')}}">Abatidos</a>
       <a class="nav-item nav-link" href="{{ path('goatForDead')}}">Relatório para Abate</a>
-      
+      </div>
     </div>
   </div>
 </nav>
