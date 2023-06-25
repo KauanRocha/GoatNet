@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editar Animal{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+
+        <h1 class="d-flex justify-content-center mt-2">Editar Animal</h1>
+
+        <div class="d-flex justify-content-end">
+
+            <a class="btn btn-dark" href="{{ path('app_goat_index') }}">Voltar</a>
+
+        </div>
+
+
+        {{ include('goat/_form.html.twig', {'button_label': 'Alterar'}) }}
+
+
+    </div>
+
+    
+{% endblock %}

@@ -1,0 +1,8 @@
+<div class="container">
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <div class="d-flex justify-content-end">
+        <button class="btn btn-success text-align-center" style="width: 6rem";>{{ button_label|default('Criar') }}</button>
+    </div>
+{{ form_end(form) }}
+</div>

@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+    <div class="card text-center">
+      <div class="card-header" style="background-color: #C4D7B2">
+        Animais com 1 anos e consumo maior que 500kg
+      </div>
+      <div class="card-body">
+        {{ include('components/table.html.twig', {'retorno' : 'Não há animais que atendem o critério!'}) }}
+      </div>
+    </div>
+
+    <div class="row mt-3 mb-3">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+          <div class="card">
+            <div class="card-header text-center" style="background-color: #C4D7B2">
+              Produção de leite Semanal
+            </div>
+            <div class="card-body">      
+              <p class="card-text text-center">{{ leite }}</p>
+              <p class="card-text text-center">
+                Litros por semana
+              </p>
+            </div>
+          </div>
+        </div>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-header text-center" style="background-color: #C4D7B2">
+            Consumo de ração Semanal
+          </div>
+          <div class="card-body">      
+            <p class="card-text text-center">{{ racao }}</p>
+            <p class="card-text text-center">
+              Quilogramas por semana
+            </p>
+         </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}

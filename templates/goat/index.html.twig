@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+
+
+    <div class="container">
+            {% for message in app.flashes('message') %}
+                <div class="d-flex justify-content-end">
+                    <div>
+
+                    </div>
+
+                    <div class="d-flex flex-row-reverse alert alert-{{ label }} position-absolute ps-3">
+                        {{ message }}
+                    </div>
+                </div>
+            {% endfor %}
+    </div>
+
+        <h1 class="d-flex justify-content-center m-2">{{ title }}</h1>
+        
+        <a class="btn btn-success my-3" href="{{ path('app_goat_new') }}">Cadastrar novo animal</a>
+
+    {# <div  class="d-flex align-items-center justify-content-center mt-3"> #}
+
+    {% include "components/table.html.twig" %}
+    
+    </div>
+
+
+
+{% endblock %}

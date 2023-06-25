@@ -1,0 +1,58 @@
+<div>
+
+    <table class="table" >
+        <thead >
+            <tr  style="height: 3.3rem;">
+                <th style="background-color: #E1ECC8;" class="text-center rounded-start">Codigo</th>
+                <th style="background-color: #E1ECC8;" class="text-center">Leite produzido</th>
+                <th style="background-color: #E1ECC8;" class="text-center">Ração consumida</th>
+                <th style="background-color: #E1ECC8;" class="text-center">Peso</th>
+                <th style="background-color: #E1ECC8;"class="text-center">Data de Nascimento</th>
+                <th style="background-color: #E1ECC8;"class="text-center rounded-end">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+        {% for goat in goats %}
+            <tr>
+                <th class="text-center">{{ goat.codigo }}</th>
+                <td class="text-center">{{ goat.leiteProd ~" litros"}}</td>
+                <td class="text-center">{{ goat.racaoCons ~" kg"}}</td>
+                <td class="text-center">{{ goat.peso ~" kg"}}</td>
+                <td class="text-center">{{ goat.dataNasc ? goat.dataNasc|date('d/m/y') : '' }}</td>
+                <td class="text-center">
+                <div class"row">
+                {% if goat.abatido is null %}                    
+                    <a  class="btn btn-sm" {# style="background-color: #DD2026;"#} href="{{ path('goatAbater', {'id': goat.id}) }}">
+                        <i class="fa-solid fa-skull" ></i>
+                    </a>                        
+                    <a class="btn btn-sm"  {#style="background-color: #0DD9FE;" #} href="{{ path('app_goat_edit', {'id': goat.id}) }}">
+                        <i class="fa-solid fa-light fa-pencil"></i>
+                    </a>                        
+                    <a  class="btn btn-sm" {#} style="background-color: #6FCB9F;" #}href="{{ path('goatDelete', {'id': goat.id}) }}">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </a>
+                {% else %}
+                    <a class="btn btn-sm"  {#style="background-color: #0DD9FE;" #} href="{{ path('app_goat_edit', {'id': goat.id}) }}">
+                        <i class="fa-solid fa-light fa-pencil"></i>
+                    </a>                        
+                    <a  class="btn btn-sm" {#} style="background-color: #6FCB9F;" #}href="{{ path('goatDelete', {'id': goat.id}) }}">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </a>
+                {% endif %}
+                </div>                                           
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">{{ retorno|default('Não há animaias') }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="d-flex justify-content-end" >
+        {{ knp_pagination_render(goats)}}
+    </div>
+
+</div>   
